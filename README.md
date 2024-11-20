@@ -5,7 +5,7 @@ How can you extract the 32 private key bytes from a PEM file?
 # Solution
 
 1. Save your key in pem format to `private.pem` 
-2. Run the following command: `openss pkey -inform pem -in private.pem -text`
+2. Run the following command: `openssl pkey -inform pem -in private.pem -text`
 3. Now copy the part after `priv:`
 4. Use the following script to get the key bytes as a base64urlsafe encoded string
 
