@@ -10,12 +10,12 @@ How can you extract the 32 private key bytes from a PEM file?
 4. Use the following script to get the key bytes as a base64urlsafe encoded string
 
 ```py
-import base64
 yourkey = """
     00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:
     00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:
     00:00
 """
+import base64
 key = yourkey.replace("\n","").replace(" ","").split(":")
 key_ints = [int(k,16) for k in key]
 key_bytes = bytes(key_ints)
